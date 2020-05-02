@@ -1,0 +1,16 @@
+SET SERVEROUTPUT ON
+
+BEGIN
+    FOR i IN 2000..2015 LOOP
+        IF i < 2004 THEN 
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'black', 'gas', 'compact car', 'manual', 4, i, 50*i, 'original', '2wd');
+        ELSIF i < 2009 THEN
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'red', 'gas', 'compact car', 'automatic', 4, i, 2*i, 'painted', '2wd');
+        ELSE 
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'white', 'dissel', 'compact car', 'automatic', 4, i, i/2, 'original', '2wd');
+        END IF;
+    END LOOP;
+ END;
