@@ -51,12 +51,12 @@ LOGGING;
 
 ALTER TABLE count_cylinders ADD CONSTRAINT count_cylinders_pk PRIMARY KEY ( count_cylinders );
 
-CREATE TABLE drve (
+CREATE TABLE drive (
     drive_name VARCHAR2(20) NOT NULL
 )
 LOGGING;
 
-ALTER TABLE drve ADD CONSTRAINT drve_pk PRIMARY KEY ( drive_name );
+ALTER TABLE drive ADD CONSTRAINT drve_pk PRIMARY KEY ( drive_name );
 
 CREATE TABLE fuel (
     fuel_name VARCHAR2(20) NOT NULL
@@ -93,21 +93,20 @@ LOGGING;
 
 ALTER TABLE region ADD CONSTRAINT region_pk PRIMARY KEY ( region );
 
-CREATE TABLE state (
+CREATE TABLE us_state (
     state_name    VARCHAR2(5) NOT NULL,
-    state_region  VARCHAR2(50)
-        CONSTRAINT not_null_region NOT NULL
+    state_region  VARCHAR2(50) NOT NULL
 )
 LOGGING;
 
-ALTER TABLE state ADD CONSTRAINT state_pk PRIMARY KEY ( state_name );
+ALTER TABLE us_state ADD CONSTRAINT state_pk PRIMARY KEY ( state_name );
 
-CREATE TABLE tranmission (
+CREATE TABLE transmission (
     transmission VARCHAR2(20) NOT NULL
 )
 LOGGING;
 
-ALTER TABLE tranmission ADD CONSTRAINT tranmission_pk PRIMARY KEY ( transmission );
+ALTER TABLE transmission ADD CONSTRAINT transmission_pk PRIMARY KEY ( transmission );
 
 ALTER TABLE car
     ADD CONSTRAINT car_car_model_fk FOREIGN KEY ( car_model )
@@ -130,8 +129,8 @@ ALTER TABLE car
     NOT DEFERRABLE;
 
 ALTER TABLE car
-    ADD CONSTRAINT car_drve_fk FOREIGN KEY ( car_drive )
-        REFERENCES drve ( drive_name )
+    ADD CONSTRAINT car_drive_fk FOREIGN KEY ( car_drive )
+        REFERENCES drive ( drive_name )
     NOT DEFERRABLE;
 
 ALTER TABLE car
@@ -146,7 +145,7 @@ ALTER TABLE car_model
 
 ALTER TABLE car
     ADD CONSTRAINT car_tranmission_fk FOREIGN KEY ( car_transmission )
-        REFERENCES tranmission ( transmission )
+        REFERENCES transmission ( transmission )
     NOT DEFERRABLE;
 
 ALTER TABLE lot
@@ -156,10 +155,10 @@ ALTER TABLE lot
 
 ALTER TABLE lot
     ADD CONSTRAINT lot_state_fk FOREIGN KEY ( lot_state )
-        REFERENCES state ( state_name )
+        REFERENCES us_state ( state_name )
     NOT DEFERRABLE;
 
-ALTER TABLE state
+ALTER TABLE us_state
     ADD CONSTRAINT state_region_fk FOREIGN KEY ( state_region )
         REFERENCES region ( region )
     NOT DEFERRABLE;

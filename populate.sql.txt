@@ -1,0 +1,122 @@
+---------------------------
+-- Populate Region table
+---------------------------
+INSERT INTO Region(region)
+VALUES('lincoln');
+INSERT INTO Region(region)
+VALUES('denver');
+INSERT INTO Region(region)
+VALUES('new-jersey');
+INSERT INTO Region(region)
+VALUES('alabama');
+---------------------------
+-- Populate US_STATE table
+---------------------------
+INSERT INTO US_STATE(state_name, state_region)
+VALUES('mi','lincoln');
+INSERT INTO US_STATE(state_name, state_region)
+VALUES('tx','denver');
+INSERT INTO US_STATE(state_name, state_region)
+VALUES('nj','new-jersey');
+INSERT INTO US_STATE(state_name, state_region)
+VALUES('vi','alabama');
+---------------------------
+-- Populate Manufacturer table
+---------------------------
+INSERT INTO Manufacturer(company_name)
+VALUES('Toyota');
+INSERT INTO Manufacturer(company_name)
+VALUES('Volkswagen');
+---------------------------
+-- Populate Car_Model table
+---------------------------
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Corolla', 'Toyota');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Camry', 'Toyota');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Land Cruiser', 'Toyota');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Polo', 'Volkswagen');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Passat', 'Volkswagen');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Golf', 'Volkswagen');
+---------------------------
+-- Populate Color table
+---------------------------
+INSERT INTO Color(color_name)
+VALUES('black');
+INSERT INTO Color(color_name)
+VALUES('white');
+INSERT INTO Color(color_name)
+VALUES('green');
+INSERT INTO Color(color_name)
+VALUES('grey');
+---------------------------
+-- Populate Transmission table
+---------------------------
+INSERT INTO Transmission(transmission)
+VALUES('manual');
+INSERT INTO Transmission(transmission)
+VALUES('automatic');
+---------------------------
+-- Populate Drive table
+---------------------------
+INSERT INTO Drive(drive_name)
+VALUES('2wd');
+INSERT INTO Drive(drive_name)
+VALUES('4wd');
+---------------------------
+-- Populate Car_Type table
+---------------------------
+INSERT INTO Car_Type(type_name)
+VALUES('compact car');
+INSERT INTO Car_Type(type_name)
+VALUES('sedan');
+INSERT INTO Car_Type(type_name)
+VALUES('SUV');
+---------------------------
+-- Populate Count_cylinders table
+---------------------------
+INSERT INTO Count_cylinders(count_cylinders)
+VALUES(4);
+INSERT INTO Count_cylinders(count_cylinders)
+VALUES(6);
+INSERT INTO Count_cylinders(count_cylinders)
+VALUES(8);
+---------------------------
+-- Populate Fuel table
+---------------------------
+INSERT INTO Fuel(fuel_name)
+VALUES('gas');
+INSERT INTO Fuel(fuel_name)
+VALUES('dissel');
+---------------------------
+-- Populate Car table
+---------------------------
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000001', 'Corolla', 'black', 'gas', 'compact car', 'manual', 4, 2006, 10000, 'original', '2wd');
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000002', 'Camry', 'white', 'gas', 'sedan', 'automatic', 8, 2010, 20000, 'original', '2wd');
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000003', 'Polo', 'green', 'dissel', 'compact car', 'manual', 4, 2005, 30000, 'rebuild', '2wd');
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000004', 'Passat', 'grey', 'dissel', 'sedan', 'manual', 6, 2011, 40000, 'pained', '2wd');
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000005', 'Land Cruiser', 'white', 'gas', 'SUV', 'automatic', 8, 2010, 50000, 'original', '4wd');
+INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
+VALUES('1000000006', 'Golf', 'black', 'dissel', 'compact car', 'manual', 4, 2017, 60000, 'pained', '2wd');
+---------------------------
+-- Populate Lot table
+---------------------------
+INSERT INTO Lot(lot_price, lot_vin, lot_state, lot_lat, lot_long)
+VALUES( 5000, '1000000001', 'mi', -18.32, 2.15);
+INSERT INTO Lot(lot_price, lot_vin, lot_state, lot_lat, lot_long)
+VALUES(7000, '1000000002', 'tx', -8.321, 12.15);
+INSERT INTO Lot(lot_price, lot_vin, lot_state, lot_lat, lot_long)
+VALUES(9000, '1000000003', 'nj', -28.321, 4.15);
+INSERT INTO Lot(lot_price, lot_vin, lot_state, lot_lat, lot_long)
+VALUES(10000, '1000000004', 'tx', -38.321, 22.15);
+INSERT INTO Lot(lot_price, lot_vin, lot_state, lot_lat, lot_long)
+VALUES(15000, '1000000005', 'vi', -11.321, 3.15);
