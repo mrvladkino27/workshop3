@@ -6,7 +6,7 @@
 
 
 CREATE TABLE car (
-    car_vin              VARCHAR2(20) NOT NULL,
+    car_vin              VARCHAR2(50) NOT NULL,
     car_model            VARCHAR2(100) NOT NULL,
     car_color            VARCHAR2(50) NOT NULL,
     car_fuel             VARCHAR2(20) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE lot (
     lot_lat    FLOAT NOT NULL,
     lot_long   FLOAT NOT NULL,
     lot_state  VARCHAR2(5) NOT NULL,
-    lot_vin    VARCHAR2(20) NOT NULL
+    lot_vin    VARCHAR2(50) NOT NULL
 )
 LOGGING;
 
