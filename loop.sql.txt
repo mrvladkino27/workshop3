@@ -1,16 +1,47 @@
-SET SERVEROUTPUT ON
-
+delete from car;
+delete from color;
+delete from transmission;
+delete from car_model;
+delete from manufacturer;
+delete from car_cylinders;
+delete from car_type;
+delete from fuel;
+delete from drive;
+INSERT INTO Manufacturer(company_name)
+VALUES('Toyota');
+INSERT INTO Car_Model(model_name, model_manufactured)
+VALUES('Corolla', 'Toyota');
+INSERT INTO Color(color_name)
+VALUES('black');
+INSERT INTO Color(color_name)
+VALUES('red');
+INSERT INTO Color(color_name)
+VALUES('white');
+INSERT INTO Fuel(fuel_name)
+VALUES('gas');
+INSERT INTO Fuel(fuel_name)
+VALUES('diesel');
+INSERT INTO Car_Type(type_name)
+VALUES('compact car');
+INSERT INTO Transmission(trans_name)
+VALUES('manual');
+INSERT INTO Car_cylinders(count_cylinders)
+VALUES(4);
+INSERT INTO Drive(drive_name)
+VALUES('RWD');
+INSERT INTO Transmission(trans_name)
+VALUES('automatic');
 BEGIN
     FOR i IN 2000..2015 LOOP
         IF i < 2004 THEN 
-            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
-            VALUES('100000'||i, 'Corolla', 'black', 'gas', 'compact car', 'manual', 4, i, 50*i, 'original', '2wd');
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylynders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'black', 'gas', 'compact car', 'manual', 4, i, 50*i, 'original', 'RWD');
         ELSIF i < 2009 THEN
-            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
-            VALUES('100000'||i, 'Corolla', 'red', 'gas', 'compact car', 'automatic', 4, i, 2*i, 'painted', '2wd');
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylynders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'red', 'gas', 'compact car', 'automatic', 4, i, 2*i, 'painted', 'RWD');
         ELSE 
-            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylinders, car_year, car_mileage, car_condition, car_drive)
-            VALUES('100000'||i, 'Corolla', 'white', 'dissel', 'compact car', 'automatic', 4, i, i/2, 'original', '2wd');
+            INSERT INTO Car(car_vin, car_model, car_color, car_fuel, car_type, car_transmission, car_count_cylynders, car_year, car_mileage, car_condition, car_drive)
+            VALUES('100000'||i, 'Corolla', 'white', 'diesel', 'compact car', 'automatic', 4, i, i/2, 'original', 'RWD');
         END IF;
     END LOOP;
  END;
